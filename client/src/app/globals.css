@@ -1,0 +1,926 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  line-height: 1.6;
+  /* font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; */
+  background-color: #080808; /* Black background with 0.8 opacity */
+  color: #eef2f3; /* Light text color for contrast */
+}
+
+.header-main{
+  height: 5vw;
+  min-height: fit-content;
+  min-width: fit-content;
+  
+}
+
+.cropped-div div{
+  width: 20vw ;
+  height: 100%;
+  background-image: url('/assets/logo.png'); 
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-top: -3%;
+}
+
+
+.head-button{
+  background-color: #ff8d23;
+  width: max-content;
+  height: auto;
+  padding: 8% 10% 8% 10%;
+  font-weight: 600;
+  border-radius: 20px;
+  font-size: 1vw;
+  
+}
+.font-1vw{
+  font-size: 1vw;
+}
+
+/* Container for the hero section */
+/* Hero Section Styles */
+.hero {
+  position: relative;
+  width: 100%;
+  height: calc(55vw - 6.4vw);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background-color: #000;
+  perspective: 1px;
+}
+
+.video-rap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  transform: translateZ(-1px) scale(2);
+  overflow: hidden;
+}
+
+.herovideo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.5); /* Darken the video further for better text visibility */
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7); /* Darker overlay for contrast */
+  z-index: 2;
+  transition: background 0.3s ease-in-out;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  opacity: 0;
+  animation: fadeInUp 1.5s ease-out forwards;
+}
+
+.hero-content h1 {
+  font-size: 3.5em;
+  font-weight: 700;
+  margin-bottom: 20px;
+  line-height: 1.2;
+  background: linear-gradient(90deg, #00eeff, #f8e406);
+  -webkit-background-clip: text;
+  color: transparent; /* Keeping the gradient */
+  text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5); /* Darker shadow for better depth */
+}
+
+.hero-content p {
+  font-size: 1.5em;
+  line-height: 1.5;
+  margin-bottom: 30px;
+  color: #e0e0e0; /* Softer gray for better readability */
+  opacity: 0;
+  animation: fadeIn 1s ease forwards; /* Staggered fade-in animation */
+  animation-delay: 0.5s; /* Delay for the paragraph */
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 15px 30px;
+  background-color: #ff8d23; /* Button background */
+  color: #fff; /* White text for contrast */
+  font-size: 1.2em;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: bold;
+  box-shadow: 0px 0px 15px rgba(255, 107, 107, 0.6);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #ff4747;   box-shadow: 0px 0px 25px rgba(255, 71, 71, 1);
+  transform: scale(1.05); 
+}
+
+.social-icons {
+  margin-top: 20px;
+}
+
+.social-icon {
+  display: inline-block;
+  margin: 0 10px;
+  padding: 10px 15px;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #fff; 
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.social-icon:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+  transform: scale(1.05); 
+}
+
+/* Animation keyframes */
+@keyframes fadeIn {
+  0% {
+      opacity: 0;
+  }
+  100% {
+      opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+      opacity: 0;
+      transform: translateY(30px);
+  }
+  100% {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+.hero:hover .hero-overlay {
+  background: rgba(0, 0, 0, 0.8); 
+}
+
+
+
+/* Responsive styling */
+
+/* Styling for the section header */
+/* Styling for the featured projects section */
+
+
+/* Styling for the featured projects section */
+.featured-projects {
+    max-width: 1200px;
+    margin: 40px auto; 
+    padding: 40px 20px;
+    background: linear-gradient(135deg, rgba(21, 20, 20, 0.639) 30%, rgba(240, 139, 51, 0.1) 70%); /* Soft gradient background with your theme color */
+    border-radius: 20px; 
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5); /* Stronger shadow for depth */
+    transition: transform 0.3s, box-shadow 0.3s; /* Transition for hover effects */
+}
+
+.featured-projects:hover {
+    transform: translateY(-5px); /* Slight lift on hover */
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6); /* Deeper shadow on hover */
+}
+
+.featured-projects h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2.8em; /* Increased font size for emphasis */
+    color: #f08b33; /* Your theme color */
+    font-weight: 700; 
+    text-transform: uppercase; 
+    letter-spacing: 1.5px; /* Increased spacing for a more modern feel */
+    text-shadow: 3px 3px 6px rgba(255, 255, 255, 0.1); /* Soft shadow for depth */
+}
+
+.project-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 30px; 
+}
+
+.project {
+    position: relative;
+    width: 320px; 
+    transition: transform 0.3s, box-shadow 0.3s;
+    border-radius: 15px; 
+    overflow: hidden; 
+    background: rgba(255, 255, 255, 0.601); /* Light background for project cards */
+    backdrop-filter: blur(10px); /* Adds a blur effect behind the project cards */
+    border: 1px solid rgba(240, 139, 51, 0.2); /* Subtle border with your theme color */
+}
+
+.project:hover {
+    transform: translateY(-10px); /* More pronounced lift effect */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6); 
+}
+
+.thumbnail {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px; 
+    transition: transform 0.3s; 
+}
+
+.thumbnail img {
+    width: 100%;
+    transition: transform 0.4s; 
+}
+
+.thumbnail:hover img {
+    transform: scale(1.1); /* Zoom in on image hover */
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.9); /* Darker overlay */
+    color: #f08b33; /* Your theme color for text */
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transition: opacity 0.4s; 
+    padding: 20px;
+    border-radius: 15px; 
+}
+
+.thumbnail:hover .overlay {
+    opacity: 1; 
+}
+
+.overlay h3 {
+    font-size: 1.8em; /* Increased size for project title */
+    margin-bottom: 10px;
+    font-weight: 600; 
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4); /* Soft shadow for depth */
+}
+
+.overlay p {
+    font-size: 1.1em; /* Increased font size for better readability */
+    max-width: 80%;
+    text-align: center; 
+}
+
+/* Enhanced Mockup Container Styles */
+.mockup-container {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 40px;
+  padding: 20px;
+  gap: 40px;
+  flex-wrap: wrap;
+  perspective: 1200px; /* Deeper 3D perspective for more dramatic effect */
+  background: rgba(0, 0, 0, 0.5); /* Darker background for contrast */
+  backdrop-filter: blur(12px); /* Blur effect for glassmorphism */
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); /* Soft shadow around container */
+}
+
+/* Sleek Mockup Styles */
+.mockup {
+  position: relative;
+  text-align: center;
+  transform: perspective(1200px);
+  transition: transform 0.5s ease, box-shadow 0.5s ease, border 0.5s ease;
+  cursor: pointer;
+  border-radius: 20px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.08); /* Slightly more visible background */
+  backdrop-filter: blur(15px); /* Stronger glassmorphism */
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2); /* Enhanced shadow */
+}
+
+/* Stylish Hover Effects for Mockups */
+.mockup:hover {
+  transform: rotateY(20deg) rotateX(8deg) scale(1.08); /* More dynamic 3D rotation */
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4); /* Deeper shadow on hover */
+  border: 3px solid #f08b33; /* Themed glowing border */
+}
+
+/* Mockup Image Styles */
+.mockup img {
+  width: 320px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4); /* Stronger shadow for depth */
+  transition: transform 0.4s ease, box-shadow 0.4s ease, filter 0.4s ease;
+}
+
+/* Stylish Image Hover Effects */
+.mockup img:hover {
+  transform: scale(1.15) rotate(5deg); /* More dramatic zoom and rotation */
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6); /* Bigger shadow on hover */
+  filter: brightness(1.2) saturate(1.1); /* Brighter and more vibrant colors */
+}
+
+/* Light Reflection Effect Below the Mockup */
+.mockup::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background: linear-gradient(transparent, rgba(255, 255, 255, 0.25));
+  opacity: 0.8;
+  filter: blur(10px);
+  transform: scaleY(-1);
+  border-radius: 15px;
+  transition: opacity 0.5s ease, filter 0.5s ease;
+}
+
+/* Hover Effects for Reflection */
+.mockup:hover::after {
+  opacity: 1; /* Increase opacity on hover */
+  filter: blur(6px); /* Sharper reflection on hover */
+}
+
+/* Floating Animation */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.mockup {
+  animation: float 6s ease-in-out infinite; /* Gentle floating animation */
+}
+
+/* Neon Glow Effect */
+.mockup:hover::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(240, 139, 51, 0.6), 0 0 40px rgba(240, 139, 51, 0.4); /* Neon glow around mockup */
+  transition: box-shadow 0.5s ease;
+}
+
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+    .project-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .project {
+        width: 90%; 
+    }
+
+    .mockup-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .mockup img {
+        width: 90%; 
+    }
+}
+
+/* Container */
+
+/* Container */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+/* Introduction Snippet */
+.intro-snippet {
+  text-align: center;
+  margin: 60px 0;
+  animation: fadeIn 1s ease-in-out;
+  padding: 40px;
+  background: linear-gradient(135deg, #ffffff, #f8f8f8);
+  box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.1);
+  border-radius: 25px;
+  border: 2px solid #f08b33; /* Subtle border for elegance */
+}
+
+.intro-snippet h1 {
+  background: linear-gradient(135deg, #f08b33, #ffba73);
+  -webkit-background-clip: text;
+  color: transparent;
+  font-size: 3.5em;
+  font-weight: 700;
+  margin-bottom: 15px;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Text shadow for depth */
+}
+
+.intro-snippet p {
+  font-size: 1.4em;
+  color: #555;
+  line-height: 1.7;
+  max-width: 800px;
+  margin: 0 auto 20px;
+}
+
+.intro-snippet p a {
+  color: #f08b33;
+  text-decoration: none;
+  font-weight: bold;
+  padding-bottom: 5px;
+  border-bottom: 2px solid transparent;
+  transition: all 0.4s ease, transform 0.3s ease; /* Smooth transformation */
+}
+
+.intro-snippet p a:hover {
+  border-bottom: 2px solid #f08b33;
+  color: #ffba73;
+  transform: scale(1.05); /* Slight scale up on hover */
+}
+
+@media (max-width: 768px) {
+  .hero-content h1 {
+      font-size: 2.2em;
+  }
+
+  .hero-content p {
+      font-size: 1.2em;
+  }
+
+  .cta-button {
+      padding: 10px 20px;
+      font-size: 1em;
+  }
+
+  .intro-snippet h1 {
+      font-size: 1.5em;
+  }
+
+  .intro-snippet p {
+      font-size: 0.9em;
+  }
+
+}
+/* Skills Preview */
+.skills-preview {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 60px 0;
+  margin: 60px 0;
+  background: linear-gradient(135deg, #000, #111); /* Gradient background for depth */
+  border-radius: 25px;
+}
+
+.skills-preview h2 {
+  margin-bottom: 40px;
+  font-size: 2.4em;
+  font-weight: 700;
+  color: #fff; /* White text */
+  text-align: center; /* Centered text */
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.skills-icons {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  flex-wrap: wrap;
+  max-width: 1200px; /* Wider container */
+}
+
+.skill {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: rgba(255, 255, 255, 0.9); /* Slightly transparent white background */
+  padding: 30px;
+  border-radius: 15px;
+  width: 140px;
+  height: 180px;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2); /* Soft shadow */
+}
+
+.skill:hover {
+  transform: translateY(-10px) rotate(3deg);
+  box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
+}
+
+.skill img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  margin-bottom: 12px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.4s ease;
+}
+
+.skill:hover img {
+  transform: scale(1.1) rotate(-10deg); /* Dynamic hover effect */
+}
+
+.skill p {
+  font-size: 1.2em;
+  font-weight: 600;
+  color: #333; /* Dark text for contrast */
+}
+
+.skill:hover p {
+  color: #f08b33; /* Color change on hover */
+}
+
+
+
+/* Testimonials Preview */
+.testimonials-preview {
+  text-align: center;
+  margin: 80px 0;
+  animation: fadeInUp 1s ease-in-out;
+  padding: 30px;
+  background: linear-gradient(135deg, #f08b33, rgba(240, 139, 51, 0.7));
+  border-radius: 25px;
+  box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.2); /* Enhanced shadow */
+}
+
+.testimonials-preview h2 {
+  margin-bottom: 40px;
+  font-size: 2.2em;
+  font-weight: 700;
+  color: #fff;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Text shadow for depth */
+}
+
+.testimonial-slider {
+  display: flex;
+  overflow-x: auto;
+  gap: 30px;
+  padding: 0 10px;
+  scrollbar-width: none; /* Hide scrollbar */
+}
+
+.testimonial-slider::-webkit-scrollbar {
+  display: none; /* Hide scrollbar for webkit browsers */
+}
+
+.testimonial {
+  min-width: 280px;
+  padding: 30px;
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth shadow transition */
+}
+
+.testimonial:hover {
+  transform: translateY(-20px);
+  box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.3); /* More prominent shadow on hover */
+}
+
+.testimonial p {
+  font-size: 1.2em;
+  font-weight: 300;
+  line-height: 1.7;
+  color: #555;
+}
+
+.testimonial cite {
+  margin-top: 15px;
+  display: block;
+  font-style: normal;
+  font-size: 1.1em;
+  font-weight: 600;
+  color: #f08b33;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  0% {
+      opacity: 0;
+      transform: translateY(20px);
+  }
+  100% {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+      opacity: 0;
+      transform: translateY(30px);
+  }
+  100% {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .skills-preview {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .skills-icons {
+      flex-direction: column;
+      gap: 20px;
+  }
+
+  .testimonial-slider {
+      flex-direction: column;
+      align-items: center;
+  }
+  
+}
+.footer {
+  background: rgba(0, 0, 0, 0.8); /* Dark transparent background */
+  color: #fff;
+  padding: 40px 20px;
+}
+
+.footer .container {
+  max-width: 1200px; /* Limit width for larger screens */
+  margin: 0 auto; /* Center the container */
+}
+
+.footer-content {
+  display: flex; /* Row layout */
+  justify-content: space-between; /* Space evenly between items */
+  align-items: flex-start; /* Align items to the top */
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+  gap: 40px; /* Space between sections */
+}
+
+.footer-info, .social-media, .quick-links {
+  flex: 1; /* Allow items to grow and fill space */
+  min-width: 200px; /* Set minimum width for better responsiveness */
+}
+
+.footer h2 {
+  font-size: 1.5em;
+  margin-bottom: 15px;
+  color: #f08b33; /* Highlight color */
+}
+
+.footer p, .footer a {
+  font-size: 1em;
+  color: #fff;
+  margin: 5px 0;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer a:hover {
+  color: #f08b33; /* Highlight color on hover */
+}
+
+.social-media {
+  text-align: center; /* Center align for social media */
+}
+
+.social-icons {
+  display: flex;
+  gap: 15px; /* Space between icons */
+  justify-content: center; /* Center the icons */
+}
+
+.social-media img {
+  width: 40px; /* Size of social media icons */
+  height: 40px;
+  transition: transform 0.3s ease;
+}
+
+.social-media img:hover {
+  transform: scale(1.1); /* Slightly enlarge on hover */
+}
+
+.quick-links ul {
+  list-style: none; /* Remove bullet points */
+  padding: 0; /* Remove padding */
+}
+
+.quick-links li {
+  margin: 5px 0;
+}
+
+.quick-links li a {
+  transition: color 0.3s ease;
+}
+
+.quick-links li a:hover {
+  color: #f08b33; /* Highlight color on hover */
+}
+
+.footer-bottom {
+  text-align: center; /* Center the copyright notice */
+  padding-top: 20px; /* Space above copyright */
+  border-top: 1px solid rgba(255, 255, 255, 0.1); /* Optional border for separation */
+  margin-top: 20px; /* Space between content and copyright */
+}
+.navmenu{
+  width: 50px;
+  height: 50px;
+  display: none;
+}
+@media (max-width: 768px) {
+  .navmenu{
+    width: 25px;
+    height: 25px;
+    display: inline;
+    margin-left: 50%;
+  }
+  .nav-links{
+    display: none;
+  }
+  .head-button{
+    width: 30vw;
+    font-size: 3vw;
+    height: auto;
+  }
+  .cropped-div{
+    width: 50vw; 
+    height: 100%;
+    margin-left: -6%;
+  }
+  .hero-content p{
+    display: none;
+  }
+  .hero{
+    height: calc(100vh - 6.4vw);
+  }
+  .hero-content{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+  }
+  .hero-content a{
+    margin: 0px;
+    margin-top: 20px;
+  }
+  .featured-projects h2{
+    font-size: 1.5em;
+  }
+  .animated-mockups h2{
+    margin: 0px;
+    margin-top: 20px;
+  }
+  .footer > .container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .quick-links,.social-media,.footer-info,.footer-bottom{
+    align-self: center;
+    text-align: center;
+  }
+  .skill p{
+    text-align: center;
+  }
+
+}
+.review {
+  width: 100%;
+  padding: 30px;
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth shadow transition */
+}
+.name, .reviews{
+  color: black;
+}
+
+
+/* Container styling */
+/* Container styling */
+.testimonials-preview-review {
+  background-color: #fff5e6;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+  max-width: 800px;
+  margin: 0 auto;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Heading styling */
+
+/* Review form container styling */
+.testimonial-slider {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.review {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 600px;
+}
+
+/* Label styling */
+.review label {
+  color: #444;
+  font-size: 18px;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+/* Input and textarea styling */
+.review input[type="text"],
+.review textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #fff;
+  color: #333;
+  font-size: 16px;
+}
+
+.review input[type="text"]:focus,
+.review textarea:focus {
+  border-color: #ff8d23;
+  outline: none;
+  box-shadow: 0 0 5px rgba(255, 141, 35, 0.5);
+}
+
+/* Button styling */
+.review button {
+  background-color: #ff8d23;
+  color: #fff;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.review button:hover {
+  background-color: #ff7011;
+  transform: translateY(-2px);
+}
+
+/* Additional styling for responsiveness */
+@media (max-width: 768px) {
+  .review {
+      padding: 15px;
+  }
+
+  .review input[type="text"],
+  .review textarea,
+  .review button {
+      font-size: 14px;
+  }
+}
