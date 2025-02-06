@@ -61,11 +61,13 @@ export default function Projects() {
                 {projects.map((i) => (
                     <div className="project" key={i.id}>
                         <div className="thumbnail">
+                            <a href={i.url}>
                             <img src={i.imageUrl} alt={i.title} />
                             <div className="overlay">
                                 <h3>{i.title}</h3>
                                 <p>{i.description}</p>
                             </div>
+                            </a>
                         </div>
                     </div>
                 ))}

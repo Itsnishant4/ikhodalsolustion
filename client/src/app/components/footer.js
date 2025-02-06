@@ -32,12 +32,12 @@ export default function Footer() {
                         </div>
                         <div class="footer-info">
                             <h2>Contact Information</h2>
-                            <p>Email: <a href="mailto:ikhodalsolution@gmail.com">ikhodalsolution@gmail.com</a></p>
+                            <p>Email: <a href="mailto:patelnishant2006@gmail.com">patelnishant2006@gmail.com</a></p>
                             <p>Phone: <a href="tel:+919773005701">+919773005701</a></p>
                         </div>
                     </div>
                     <div class="footer-bottom">
-                        <p>© 2024 I Khodal solustions. All rights reserved.</p>
+                        <p>© 2025 Nishant. All rights reserved.</p>
                     </div>
                 </div>
                 </section>

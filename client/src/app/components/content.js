@@ -71,7 +71,7 @@ export default function Content() {
                         <p>
                             I'm a passionate web and Android developer with a keen eye for creating seamless user experiences.
                             Whether you're looking for a sleek web interface or a dynamic mobile app, I'm here to bring your ideas
-                            to life. <a href="#about">Learn More</a>
+                            to life. 
                         </p>
                     </div>
                 </section>
@@ -109,42 +109,6 @@ export default function Content() {
                     </div>
                 </section>
 
-                {/* Reviews Section */}
-                <section id="Reviews">
-                    <div className="testimonials-preview">
-                        <h2>What Clients Say</h2>
-                        {loading ? (
-                            <p>Loading reviews...</p>
-                        ) : reviews.length > 0 ? (
-                            <div className="testimonial-slider">
-                                {reviews.map((review, index) => (
-                                    <div className="testimonial" key={index}>
-                                        <p>{review.description}</p>
-                                        <cite>— {review.name}</cite>
-                                    </div>
-                                ))}
-                            </div>
-                        ) : (
-                            <p>No reviews available yet.</p>
-                        )}
-                    </div>
-
-                    {/* Write a Review Section */}
-                    <div className="testimonials-preview testimonials-preview-review">
-                        <h2>Write A Review</h2>
-                        <div className="testimonial-slider flex justify-center align-middle">
-                            <div className="review">
-                                <label htmlFor="nameInput">Name</label>
-                                <input type="text" id="nameInput" placeholder="Your Name" className="name" />
-                                <label htmlFor="reviewInput">Review</label>
-                                <textarea id="reviewInput" placeholder="Your Review" className="reviews"></textarea>
-                                <button type="submit" onClick={senddata}>
-                                    Submit
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </section>
             </div>
         </div>
     );

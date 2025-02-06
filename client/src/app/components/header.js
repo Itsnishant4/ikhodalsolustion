@@ -2,7 +2,7 @@
 import React from 'react'
 import AnchorTemporaryDrawer from './navbarforandroid'
 import { display } from '@mui/system'
-const logo = '/assets/logo.png'
+const logo = '/assets/logo.webp'
 const blank = '/assets/blank.png'
 function Head() {
   return (
@@ -13,11 +13,10 @@ function Head() {
           <div>
             {<AnchorTemporaryDrawer />}
           </div>
-            <div className='cropped-div' style={{ marginLeft: '5vw' }}     >
-              <div >
-                <img src={blank} alt='logo' className='logo' />
-              </div>
-            </div>
+          <div className='logodiv flex h-auto max-w-fit'>
+            <img src={logo} className=' logo-i m-4 h-auto object-cover max-w-[50px]'/>
+            <p className='logo w-max text-white text-3xl p-2 m-4 px-5 pr-9'>Nishant</p>
+        </div>
         </div>
         
           
